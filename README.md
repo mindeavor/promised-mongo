@@ -94,13 +94,9 @@ Some examples of this could be:
 var db = pmongo('mydb', ['mycollection']);
 
 // the db is on a remote server (the port default to mongo)
-```
+var db = pmongo('example.com/mydb', ['mycollection']);
 
-> ~~var db = pmongo('example.com/mydb', ['mycollection']);~~
-
-
-```js
-//note the addition of option object passed in 
+//optionally pass in an option object specifying the use of SCRAM-SHA-1 for connecting to remote MongoDB running v3.0 or above
 var db = pmongo('example.com/mydb', ['mycollection'],{authMechanism: 'ScramSHA1'});
 // we can also provide some credentials
 var db = pmongo('username:password@example.com/mydb', ['mycollection'],{authMechanism: 'ScramSHA1'});
